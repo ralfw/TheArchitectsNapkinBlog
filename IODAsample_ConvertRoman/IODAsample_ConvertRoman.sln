@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.head", "convertroman.head\convertroman.head.csproj", "{BE081118-042F-4318-86E4-4C3F6A947848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.tests", "convertroman.tests\convertroman.tests.csproj", "{1BB47327-9DBD-433A-8B3A-B2BC03D9356F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.providers", "convertroman.providers\convertroman.providers.csproj", "{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.contracts", "convertroman.contracts\convertroman.contracts.csproj", "{B6B6CD5E-B70F-4824-9C54-F525B46CF130}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.conversions", "convertroman.conversions\convertroman.conversions.csproj", "{785D261D-58D2-42A5-B4B4-8427121BD062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.body", "convertroman.body\convertroman.body.csproj", "{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BB47327-9DBD-433A-8B3A-B2BC03D9356F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1BB47327-9DBD-433A-8B3A-B2BC03D9356F}.Debug|x86.Build.0 = Debug|Any CPU
+		{1BB47327-9DBD-433A-8B3A-B2BC03D9356F}.Release|x86.ActiveCfg = Release|Any CPU
+		{1BB47327-9DBD-433A-8B3A-B2BC03D9356F}.Release|x86.Build.0 = Release|Any CPU
+		{785D261D-58D2-42A5-B4B4-8427121BD062}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{785D261D-58D2-42A5-B4B4-8427121BD062}.Debug|x86.Build.0 = Debug|Any CPU
+		{785D261D-58D2-42A5-B4B4-8427121BD062}.Release|x86.ActiveCfg = Release|Any CPU
+		{785D261D-58D2-42A5-B4B4-8427121BD062}.Release|x86.Build.0 = Release|Any CPU
+		{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}.Debug|x86.Build.0 = Debug|Any CPU
+		{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}.Release|x86.ActiveCfg = Release|Any CPU
+		{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}.Release|x86.Build.0 = Release|Any CPU
+		{B6B6CD5E-B70F-4824-9C54-F525B46CF130}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B6B6CD5E-B70F-4824-9C54-F525B46CF130}.Debug|x86.Build.0 = Debug|Any CPU
+		{B6B6CD5E-B70F-4824-9C54-F525B46CF130}.Release|x86.ActiveCfg = Release|Any CPU
+		{B6B6CD5E-B70F-4824-9C54-F525B46CF130}.Release|x86.Build.0 = Release|Any CPU
+		{BE081118-042F-4318-86E4-4C3F6A947848}.Debug|x86.ActiveCfg = Debug|x86
+		{BE081118-042F-4318-86E4-4C3F6A947848}.Debug|x86.Build.0 = Debug|x86
+		{BE081118-042F-4318-86E4-4C3F6A947848}.Release|x86.ActiveCfg = Release|x86
+		{BE081118-042F-4318-86E4-4C3F6A947848}.Release|x86.Build.0 = Release|x86
+		{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

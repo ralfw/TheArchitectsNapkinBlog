@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BB47327-9DBD-433A-8B3A-B2BC03D9356F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>convertroman.tests</RootNamespace>
+    <AssemblyName>convertroman.tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Test.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\convertroman.contracts\convertroman.contracts.csproj">
+      <Project>{B6B6CD5E-B70F-4824-9C54-F525B46CF130}</Project>
+      <Name>convertroman.contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\convertroman.head\convertroman.head.csproj">
+      <Project>{BE081118-042F-4318-86E4-4C3F6A947848}</Project>
+      <Name>convertroman.head</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\convertroman.body\convertroman.body.csproj">
+      <Project>{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}</Project>
+      <Name>convertroman.body</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\convertroman.conversions\convertroman.conversions.csproj">
+      <Project>{785D261D-58D2-42A5-B4B4-8427121BD062}</Project>
+      <Name>convertroman.conversions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\convertroman.providers\convertroman.providers.csproj">
+      <Project>{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}</Project>
+      <Name>convertroman.providers</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
