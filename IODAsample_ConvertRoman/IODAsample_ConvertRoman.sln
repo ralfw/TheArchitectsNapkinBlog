@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.conversions", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.body", "convertroman.body\convertroman.body.csproj", "{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.console.tests", "convertroman.console.tests\convertroman.console.tests.csproj", "{7E0FD558-F8EA-4FEE-8493-C50807B69208}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,6 +33,10 @@ Global
 		{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}.Debug|x86.Build.0 = Debug|Any CPU
 		{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}.Release|x86.ActiveCfg = Release|Any CPU
 		{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}.Release|x86.Build.0 = Release|Any CPU
+		{7E0FD558-F8EA-4FEE-8493-C50807B69208}.Debug|x86.ActiveCfg = Debug|x86
+		{7E0FD558-F8EA-4FEE-8493-C50807B69208}.Debug|x86.Build.0 = Debug|x86
+		{7E0FD558-F8EA-4FEE-8493-C50807B69208}.Release|x86.ActiveCfg = Release|x86
+		{7E0FD558-F8EA-4FEE-8493-C50807B69208}.Release|x86.Build.0 = Release|x86
 		{B6B6CD5E-B70F-4824-9C54-F525B46CF130}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{B6B6CD5E-B70F-4824-9C54-F525B46CF130}.Debug|x86.Build.0 = Debug|Any CPU
 		{B6B6CD5E-B70F-4824-9C54-F525B46CF130}.Release|x86.ActiveCfg = Release|Any CPU

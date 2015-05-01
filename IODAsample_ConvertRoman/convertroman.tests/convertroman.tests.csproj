@@ -34,7 +34,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
+    <Compile Include="Integrationtests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -56,10 +56,6 @@
     <ProjectReference Include="..\convertroman.conversions\convertroman.conversions.csproj">
       <Project>{785D261D-58D2-42A5-B4B4-8427121BD062}</Project>
       <Name>convertroman.conversions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\convertroman.providers\convertroman.providers.csproj">
-      <Project>{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}</Project>
-      <Name>convertroman.providers</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
