@@ -8,10 +8,10 @@ namespace convertroman.console.tests
 	{
 		public static void Main (string[] args)
 		{
-			var providers = new Providers (new[]{"42"});
+			var providers = new Providers ();
 
 			var input = providers as IInputProvider;
-			Console.WriteLine ("The ultimate answer: {0}", input.Read_number_to_convert ());
+			Console.WriteLine ("The ultimate answer on the command line: {0}", input.Read_number_to_convert ());
 
 			var output = providers as IOutputProvider;
 			output.Display_result ("XLII");

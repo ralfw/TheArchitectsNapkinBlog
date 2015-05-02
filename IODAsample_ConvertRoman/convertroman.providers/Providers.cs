@@ -5,19 +5,13 @@ namespace convertroman.providers
 {
 	public class Providers : IInputProvider, IOutputProvider
 	{
-		string[] args;
-
-		public Providers(string[] args) {
-			this.args = args;
-		}
-
-
 		#region IInputProvider implementation
 
 		public string Read_number_to_convert ()
 		{
-			return this.args [0];
+			return Environment.GetCommandLineArgs () [1];
 		}
+
 		#endregion
 
 
