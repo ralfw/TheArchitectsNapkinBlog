@@ -1,19 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.head", "convertroman.head\convertroman.head.csproj", "{BE081118-042F-4318-86E4-4C3F6A947848}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.contracts", "convertroman.contracts\convertroman.contracts.csproj", "{B6B6CD5E-B70F-4824-9C54-F525B46CF130}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1FEB0664-33C0-4771-800E-460C7E5D2367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.console.tests", "convertroman.console.tests\convertroman.console.tests.csproj", "{7E0FD558-F8EA-4FEE-8493-C50807B69208}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.tests", "convertroman.tests\convertroman.tests.csproj", "{1BB47327-9DBD-433A-8B3A-B2BC03D9356F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.providers", "convertroman.providers\convertroman.providers.csproj", "{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "operations", "operations", "{18C1F393-7137-4241-8151-B1753B6EC5D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.contracts", "convertroman.contracts\convertroman.contracts.csproj", "{B6B6CD5E-B70F-4824-9C54-F525B46CF130}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.providers", "convertroman.providers\convertroman.providers.csproj", "{795EC0F3-C27C-4DE4-9A93-933A57FC12FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.conversions", "convertroman.conversions\convertroman.conversions.csproj", "{785D261D-58D2-42A5-B4B4-8427121BD062}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{64851480-97B3-446B-BB8B-801C4224C80E}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.body", "convertroman.body\convertroman.body.csproj", "{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.console.tests", "convertroman.console.tests\convertroman.console.tests.csproj", "{7E0FD558-F8EA-4FEE-8493-C50807B69208}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convertroman.head", "convertroman.head\convertroman.head.csproj", "{BE081118-042F-4318-86E4-4C3F6A947848}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,5 +55,13 @@ Global
 		{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}.Debug|x86.Build.0 = Debug|Any CPU
 		{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}.Release|x86.ActiveCfg = Release|Any CPU
 		{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7E0FD558-F8EA-4FEE-8493-C50807B69208} = {1FEB0664-33C0-4771-800E-460C7E5D2367}
+		{1BB47327-9DBD-433A-8B3A-B2BC03D9356F} = {1FEB0664-33C0-4771-800E-460C7E5D2367}
+		{795EC0F3-C27C-4DE4-9A93-933A57FC12FA} = {18C1F393-7137-4241-8151-B1753B6EC5D0}
+		{785D261D-58D2-42A5-B4B4-8427121BD062} = {18C1F393-7137-4241-8151-B1753B6EC5D0}
+		{F0E8CDFC-DD97-43BC-A22B-5B2A2C3964E1} = {64851480-97B3-446B-BB8B-801C4224C80E}
+		{BE081118-042F-4318-86E4-4C3F6A947848} = {64851480-97B3-446B-BB8B-801C4224C80E}
 	EndGlobalSection
 EndGlobal

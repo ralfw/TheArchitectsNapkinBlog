@@ -34,10 +34,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OutputProviderMock.cs" />
-    <Compile Include="InputProviderMock.cs" />
     <Compile Include="Integrationtests_head.cs" />
     <Compile Include="Integrationtests_body.cs" />
+    <Compile Include="mocks\InputProviderMock.cs" />
+    <Compile Include="mocks\OutputProviderMock.cs" />
+    <Compile Include="mocks\MockBody.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -60,5 +61,8 @@
       <Project>{785D261D-58D2-42A5-B4B4-8427121BD062}</Project>
       <Name>convertroman.conversions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="mocks\" />
   </ItemGroup>
 </Project>
