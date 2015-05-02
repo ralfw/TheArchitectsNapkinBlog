@@ -8,10 +8,10 @@ namespace convertroman.head
 
 	public class Head {
 		IInputProvider input;
-		Body body;
+		IBody body;
 		IOutputProvider output;
 
-		public Head(IInputProvider input, Body body, IOutputProvider output) {
+		public Head(IInputProvider input, IBody body, IOutputProvider output) {
 			this.output = output;
 			this.body = body;
 			this.input = input;
@@ -19,8 +19,9 @@ namespace convertroman.head
 
 		public void Run() {
 			var number = this.input.Read_number_to_convert ();
-			var result = this.body.Convert (number);
-			this.output.Display_result (result);
+			this.body.Convert (number,
+				this.output.Display_result,
+				this.output.Display_error);
 		}
 	}
 }

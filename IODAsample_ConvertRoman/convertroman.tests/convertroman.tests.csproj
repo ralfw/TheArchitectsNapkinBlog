@@ -34,7 +34,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Integrationtests.cs" />
+    <Compile Include="OutputProviderMock.cs" />
+    <Compile Include="InputProviderMock.cs" />
+    <Compile Include="Integrationtests_head.cs" />
+    <Compile Include="Integrationtests_body.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -11,7 +11,7 @@ namespace convertroman.head
 			IInputProvider input = new Providers ();
 			IOutputProvider output = input as IOutputProvider;
 
-			var body = new Body (output);
+			var body = new Body ();
 			var head = new Head (input, body, output);
 
 			head.Run ();

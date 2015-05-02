@@ -12,19 +12,19 @@ namespace convertroman.conversions
 		}
 
 
-		public static void Validate_roman_number(string romanNumber, Action<string> isValid, Action<string> isInvalid) {
+		public static void Validate_roman_number(string romanNumber, Action isValid, Action<string> isInvalid) {
 			if (System.Text.RegularExpressions.Regex.Match (romanNumber.ToUpper (), "^[IVXLCDM]+$").Success)
-				isValid (romanNumber);
+				isValid ();
 			else
-				isValid ("Invalid roman digit found in " + romanNumber);
+				isInvalid ("Invalid roman digit found in " + romanNumber);
 		}
 
 
-		public static void Validate_arabic_number(int arabicNumber, Action<int> isValid, Action<string> isInvalid) {
+		public static void Validate_arabic_number(int arabicNumber, Action isValid, Action<string> isInvalid) {
 			if (arabicNumber >= 0 && arabicNumber <= 3000)
-				isValid (arabicNumber);
+				isValid();
 			else
-				isInvalid ("Arabic number must be in range 0..3000");
+				isInvalid ("Invalid arabic number; must be in range 1..3000");
 		}
 	}
 }

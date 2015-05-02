@@ -4,33 +4,24 @@ using convertroman.conversions;
 
 namespace convertroman.body
 {
-	public class Body
+	public class Body : IBody
 	{
-		IOutputProvider output;
-
-		public Body (IOutputProvider output) {
-			this.output = output;
-		}
-
-
-		public string Convert(string number) {
-			string result = null;
-
+		public void Convert(string number, Action<string> onSuccess, Action<string> onError) {
 			RomanConversions.Determine_number_type (number,
 				romanNumber => 
 					RomanConversions.Validate_roman_number(romanNumber,
-						romanNumber_ => {
-							result = FromRomanConversion.Convert(romanNumber_);
+						() => {
+							var result = FromRomanConversion.Convert(romanNumber);
+							onSuccess(result.ToString());
 						},
-						output.Display_error),
+						onError),
 				arabicNumber =>
-				RomanConversions.Validate_arabic_number(arabicNumber,
-					arabicNumber_ => {
-						result = ToRomanConversion.Convert(arabicNumber_);
-					},
-					output.Display_error));
-
-			return result;
+					RomanConversions.Validate_arabic_number(arabicNumber,
+						() => {
+							var result = ToRomanConversion.Convert(arabicNumber);
+							onSuccess(result);
+						},
+						onError));
 		}
 	}
 }
