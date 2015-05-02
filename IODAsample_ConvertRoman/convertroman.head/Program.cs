@@ -2,11 +2,11 @@
 
 namespace convertroman.head
 {
-	class MainClass
+	public class Program
 	{
-		public static void Main (string[] args)
-		{
-			Console.WriteLine ("Hello World!");
+		public static void Main() {
+			Console.WriteLine ("hello!");
 		}
 	}
 }
+
