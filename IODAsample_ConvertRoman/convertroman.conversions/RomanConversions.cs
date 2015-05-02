@@ -1,6 +1,6 @@
 using System;
 
-namespace convertroman.head
+namespace convertroman.conversions
 {
 	public static class RomanConversions {
 		public static void Determine_number_type(string number, Action<string> isRoman, Action<int> isArabic) {

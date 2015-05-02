@@ -1,6 +1,6 @@
 using System;
 
-namespace convertroman.head
+namespace convertroman.conversions
 {
 	public static class ToRomanConversion {
 		public static string Convert(int arabicNumber) {
