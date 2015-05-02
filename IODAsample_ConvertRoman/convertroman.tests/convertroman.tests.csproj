@@ -39,6 +39,7 @@
     <Compile Include="mocks\InputProviderMock.cs" />
     <Compile Include="mocks\OutputProviderMock.cs" />
     <Compile Include="mocks\MockBody.cs" />
+    <Compile Include="Conversiontests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
