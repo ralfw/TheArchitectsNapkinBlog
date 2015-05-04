@@ -35,9 +35,10 @@ namespace spike.akka
     {
         public HeadActor(Form1 dlg, IActorRef onDataEntered)
         {
+            var self = Self;
             dlg.OnDataEntered += msg => {
                 Console.WriteLine("head {0}", System.Threading.Thread.CurrentThread.GetHashCode());
-                onDataEntered.Tell(msg, Self);
+                onDataEntered.Tell(msg, self);
             };
 
             Receive<string>(msg => {
