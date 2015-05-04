@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alarmclock.head", "alarmclock.head\alarmclock.head.csproj", "{4A4CD51A-B233-4371-8957-73B1B7743BA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spike.akka", "spike.akka\spike.akka.csproj", "{6F507012-0F55-4886-A5B3-7C90B4C90260}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spike.winforms.mono", "spike.winforms.mono\spike.winforms.mono.csproj", "{8215E46D-DB50-4528-8761-3D3684860959}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A4CD51A-B233-4371-8957-73B1B7743BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A4CD51A-B233-4371-8957-73B1B7743BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A4CD51A-B233-4371-8957-73B1B7743BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A4CD51A-B233-4371-8957-73B1B7743BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F507012-0F55-4886-A5B3-7C90B4C90260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F507012-0F55-4886-A5B3-7C90B4C90260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F507012-0F55-4886-A5B3-7C90B4C90260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F507012-0F55-4886-A5B3-7C90B4C90260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8215E46D-DB50-4528-8761-3D3684860959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8215E46D-DB50-4528-8761-3D3684860959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8215E46D-DB50-4528-8761-3D3684860959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8215E46D-DB50-4528-8761-3D3684860959}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
