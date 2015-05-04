@@ -17,10 +17,10 @@ namespace spike.akka
 
             var sys = ActorSystem.Create("MyActorSystem");
 
-            var bodyActorProps = Props.Create<BodyActor>();
-            var bodyActor = sys.ActorOf(bodyActorProps, "BodyActor");
+			var bodyActorProps = Props.Create<BodyActor> ();
+			var bodyActor = sys.ActorOf (bodyActorProps, "BodyActor");
 
-            var dlg = new Form1();
+			var dlg = new Form1();
             var headActorProps = Props.Create<HeadActor>(dlg, bodyActor)
                                       .WithDispatcher("akka.actor.synchronized-dispatcher");
             var headActor = sys.ActorOf(headActorProps, "HeadActor");
@@ -37,7 +37,7 @@ namespace spike.akka
         {
             dlg.OnDataEntered += msg => {
                 Console.WriteLine("head {0}", System.Threading.Thread.CurrentThread.GetHashCode());
-                onDataEntered.Tell(msg);
+                onDataEntered.Tell(msg, Self);
             };
 
             Receive<string>(msg => {
