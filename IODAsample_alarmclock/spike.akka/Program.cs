@@ -50,11 +50,24 @@ namespace spike.akka
 
     internal class BodyActor : ReceiveActor
     {
+		System.Threading.Timer t;
+
         public BodyActor()
         {
             Receive<string>(msg =>
             {
                 Console.WriteLine("body {0}", System.Threading.Thread.CurrentThread.GetHashCode());
+
+				switch(msg) {
+					case "start":
+						this.t = new System.Threading.Timer(sender => {
+							((IActorRef)sender).Tell(DateTime.Now.ToString());
+						}, this.Sender, 0, 1000);
+						break;
+					case "stop":
+						this.t.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite);
+						break;
+				}
                 this.Sender.Tell(msg.ToUpper());
             });
         }
