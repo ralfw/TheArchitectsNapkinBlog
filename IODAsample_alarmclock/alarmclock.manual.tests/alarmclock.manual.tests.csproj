@@ -70,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\alarmclock.head\alarmclock.head.csproj">
-      <Project>{4a4cd51a-b233-4371-8957-73b1b7743ba6}</Project>
+      <Project>{4A4CD51A-B233-4371-8957-73B1B7743BA6}</Project>
       <Name>alarmclock.head</Name>
     </ProjectReference>
   </ItemGroup>
