@@ -45,7 +45,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -93,4 +92,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <ProjectReference Include="..\alarmclock.body\alarmclock.body.csproj">
+      <Project>{18F65EAD-6D4F-4C12-A5DC-7609BB50EC7C}</Project>
+      <Name>alarmclock.body</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

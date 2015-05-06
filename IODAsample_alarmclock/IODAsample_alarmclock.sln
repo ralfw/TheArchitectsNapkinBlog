@@ -7,12 +7,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spike.akka", "spike.akka\sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alarmclock.manual.tests", "alarmclock.manual.tests\alarmclock.manual.tests.csproj", "{C8697659-6126-4324-8FBB-F90BA01C79F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alarmclock.body", "alarmclock.body\alarmclock.body.csproj", "{18F65EAD-6D4F-4C12-A5DC-7609BB50EC7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alarmclock.automatic.tests", "alarmclock.automatic.tests\alarmclock.automatic.tests.csproj", "{46E9D88D-1D76-4A53-B976-2ACC36757E0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18F65EAD-6D4F-4C12-A5DC-7609BB50EC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18F65EAD-6D4F-4C12-A5DC-7609BB50EC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18F65EAD-6D4F-4C12-A5DC-7609BB50EC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18F65EAD-6D4F-4C12-A5DC-7609BB50EC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E9D88D-1D76-4A53-B976-2ACC36757E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E9D88D-1D76-4A53-B976-2ACC36757E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E9D88D-1D76-4A53-B976-2ACC36757E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E9D88D-1D76-4A53-B976-2ACC36757E0E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A4CD51A-B233-4371-8957-73B1B7743BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A4CD51A-B233-4371-8957-73B1B7743BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A4CD51A-B233-4371-8957-73B1B7743BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
