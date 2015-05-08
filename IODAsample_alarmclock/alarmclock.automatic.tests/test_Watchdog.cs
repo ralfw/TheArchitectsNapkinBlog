@@ -58,5 +58,28 @@ namespace alarmclock.automatic.tests
 			Assert.AreEqual (new TimeSpan(0,0,0), result);
 			Assert.IsTrue (resultDiscovery);
 		}
+
+
+		[Test ()]
+		public void No_more_discoveries_after_the_first_one ()
+		{
+			var sut = new Watchdog ();
+
+			var result = TimeSpan.MinValue;
+			sut.OnRemainingTime += _ => result = _;
+
+			var resultDiscovery = false;
+			sut.OnWakeuptimeDiscovered += () => resultDiscovery = true;
+
+			sut.Start_watching_for (new DateTime (2015, 1, 1, 10, 0, 0));
+			sut.Check (new DateTime (2015, 1, 1, 10, 1, 10));
+
+			result = TimeSpan.MinValue;
+			resultDiscovery = false;
+			sut.Check (new DateTime (2015, 1, 1, 10, 1, 10));
+
+			Assert.AreEqual (TimeSpan.MinValue, result);
+			Assert.IsFalse (resultDiscovery);
+		}
 	}
 }

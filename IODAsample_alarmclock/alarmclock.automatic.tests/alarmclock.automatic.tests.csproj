@@ -35,6 +35,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="test_Watchdog.cs" />
+    <Compile Include="test_Clock.cs" />
+    <Compile Include="test_Alarmbell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -44,6 +46,10 @@
     <ProjectReference Include="..\alarmclock.body\alarmclock.body.csproj">
       <Project>{18F65EAD-6D4F-4C12-A5DC-7609BB50EC7C}</Project>
       <Name>alarmclock.body</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\alarmclock.head\alarmclock.head.csproj">
+      <Project>{4A4CD51A-B233-4371-8957-73B1B7743BA6}</Project>
+      <Name>alarmclock.head</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

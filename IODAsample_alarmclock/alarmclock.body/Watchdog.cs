@@ -18,11 +18,13 @@ namespace alarmclock.body
 		public void Check(DateTime currentTime) {
 			if (this.watching) {
 				var remainingTime = this.wakeuptime.Subtract (currentTime);
-				this.OnRemainingTime (remainingTime);
 				if (remainingTime.TotalSeconds <= 0) {
 					this.watching = false;
+					this.OnRemainingTime (new TimeSpan(0,0,0));
 					this.OnWakeuptimeDiscovered ();
 				}
+				else
+					this.OnRemainingTime (remainingTime);
 			}
 		}
 
