@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using alarmclock.body;
+using Akka.Actor;
 
 namespace alarmclock.head
 {
@@ -18,22 +19,32 @@ namespace alarmclock.head
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
 			IAlarmbell bell = new AlarmbellOSX ();
 			var clock = new Clock ();
 			var dog = new Watchdog ();
 			var dlg = new DlgAlarmclock ();
 
-			var sync = WindowsFormsSynchronizationContext.Current;
 
-			clock.OnCurrentTime += t => sync.Send (_ => dlg.Update_current_time (t), null);
-			clock.OnCurrentTime += dog.Check;
+			var sys = ActorSystem.Create("MyActorSystem");
 
-			dog.OnRemainingTime += t => sync.Send (_ => dlg.Update_remaining_time (t), null);
-			dog.OnWakeuptimeDiscovered += () => sync.Send (_ => dlg.Wakeup_time_reached (), null);
-			dog.OnWakeuptimeDiscovered += bell.Ring;
+			var bellActorProps = Props.Create<AlarmbellActor> (bell);
+			sys.ActorOf (bellActorProps, "AlarmbellActor");
 
-			dlg.OnStartRequested += dog.Start_watching_for;
-			dlg.OnStopRequested += dog.Stop_watching;
+			var dogActorProps = Props.Create<WatchdogActor> (dog, "DlgActor", new[]{"DlgActor", "AlarmbellActor"});
+			var dogActor = sys.ActorOf (dogActorProps, "WatchdogActor");
+
+			var dlgActorProps = Props.Create<DlgActor>(dlg, dogActor, dogActor)
+									 .WithDispatcher("akka.actor.synchronized-dispatcher");
+			var dlgActor = sys.ActorOf(dlgActorProps, "DlgActor");
+
+
+			clock.OnCurrentTime += t => {
+				var e = new CurrentTimeEvent{CurrentTime=t};
+				dlgActor.Tell(e);
+				dogActor.Tell(e);
+			};
+
 
             Application.Run(dlg);
         }
