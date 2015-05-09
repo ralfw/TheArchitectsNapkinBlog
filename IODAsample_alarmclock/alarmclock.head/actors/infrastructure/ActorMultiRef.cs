@@ -8,18 +8,19 @@ using Akka.Actor;
 
 namespace alarmclock.head
 {
-
-	class ActorBroadcast {
+	class ActorMultiRef {
 		IActorContext ctx;
+		string[] receiverNames;
 
-		public ActorBroadcast(IActorContext ctx) {
+		public ActorMultiRef(IActorContext ctx, params string[] receiverNames) {
 			this.ctx = ctx;
+			this.receiverNames = receiverNames;
 		}
 
-		public void Tell(string[] receiverNames, object msg) { Tell (receiverNames, msg, null); }
+		public void Tell(object msg) { Tell (msg, null); }
 
-		public void Tell(string[] receiverNames, object msg, IActorRef sender) {
-			receiverNames.ToList ().ForEach (n => {
+		public void Tell(object msg, IActorRef sender) {
+			this.receiverNames.ToList ().ForEach (n => {
 				var path = n.IndexOf("/") >= 0 ? n : "/user/" + n;
 				var receiver = this.ctx.ActorSelection(path);
 				receiver.Tell(msg, sender);

@@ -98,7 +98,7 @@
     <Compile Include="actors\messages\StartCommand.cs" />
     <Compile Include="actors\messages\StopCommand.cs" />
     <Compile Include="actors\messages\WakeupTimeDiscoveredEvent.cs" />
-    <Compile Include="actors\infrastructure\ActorBroadcast.cs" />
+    <Compile Include="actors\infrastructure\ActorMultiRef.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
