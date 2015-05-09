@@ -90,6 +90,15 @@
     <Compile Include="providers\IAlarmbell.cs" />
     <Compile Include="providers\AlarmbellWin.cs" />
     <Compile Include="providers\AlarmbellOSX.cs" />
+    <Compile Include="actors\AlarmbellActor.cs" />
+    <Compile Include="actors\WatchdogActor.cs" />
+    <Compile Include="actors\DlgActor.cs" />
+    <Compile Include="actors\messages\CurrentTimeEvent.cs" />
+    <Compile Include="actors\messages\RemainingTimeEvent.cs" />
+    <Compile Include="actors\messages\StartCommand.cs" />
+    <Compile Include="actors\messages\StopCommand.cs" />
+    <Compile Include="actors\messages\WakeupTimeDiscoveredEvent.cs" />
+    <Compile Include="actors\infrastructure\ActorBroadcast.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -111,5 +120,8 @@
   <ItemGroup>
     <Folder Include="providers\" />
     <Folder Include="portals\" />
+    <Folder Include="actors\" />
+    <Folder Include="actors\messages\" />
+    <Folder Include="actors\infrastructure\" />
   </ItemGroup>
 </Project>

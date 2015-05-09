@@ -21,7 +21,7 @@ namespace spike.akka
 			var bodyActor = sys.ActorOf (bodyActorProps, "BodyActor");
 
 			var dlg = new Form1();
-            var headActorProps = Props.Create<HeadActor>(dlg, bodyActor)
+            var headActorProps = Props.Create<HeadActor>(dlg, "BodyActor")
                                       .WithDispatcher("akka.actor.synchronized-dispatcher");
             var headActor = sys.ActorOf(headActorProps, "HeadActor");
 
@@ -33,12 +33,16 @@ namespace spike.akka
 
     internal class HeadActor : ReceiveActor
     {
-        public HeadActor(Form1 dlg, IActorRef onDataEntered)
+        public HeadActor(Form1 dlg, string onDataEntered)
         {
             var self = Self;
+			var ctx = Context;
+
             dlg.OnDataEntered += msg => {
                 Console.WriteLine("head {0}", System.Threading.Thread.CurrentThread.GetHashCode());
-                onDataEntered.Tell(msg, self);
+
+				var aref = ctx.ActorSelection("/user/" + onDataEntered);
+                aref.Tell(msg, self);
             };
 
             Receive<string>(msg => {
