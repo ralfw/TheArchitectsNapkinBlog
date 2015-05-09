@@ -49,7 +49,7 @@ namespace alarmclock.head
 
         public void Update_remaining_time(TimeSpan remainingTime)
         {
-            this.lblRemainingTime.Text = remainingTime.ToString("g");
+            this.lblRemainingTime.Text = remainingTime.ToString(@"hh\:mm\:ss");
         }
 
         public void Wakeup_time_reached()
