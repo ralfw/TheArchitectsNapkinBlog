@@ -20,33 +20,34 @@ namespace alarmclock.head
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-			IAlarmbell bell = new AlarmbellOSX ();
-			var clock = new Clock ();
-			var dog = new Watchdog ();
-			var dlg = new DlgAlarmclock ();
+			using (IAlarmbell bell = new AlarmbellOSX ())
+			using (var clock = new Clock ()) {
+				var dog = new Watchdog ();
+				var dlg = new DlgAlarmclock ();
 
 
-			var sys = ActorSystem.Create("MyActorSystem");
+				var sys = ActorSystem.Create ("MyActorSystem");
 
-			var bellActorProps = Props.Create<AlarmbellActor> (bell);
-			sys.ActorOf (bellActorProps, "AlarmbellActor");
+				var bellActorProps = Props.Create<AlarmbellActor> (bell);
+				sys.ActorOf (bellActorProps, "AlarmbellActor");
 
-			var dogActorProps = Props.Create<WatchdogActor> (dog, "DlgActor", new[]{"DlgActor", "AlarmbellActor"});
-			var dogActor = sys.ActorOf (dogActorProps, "WatchdogActor");
+				var dogActorProps = Props.Create<WatchdogActor> (dog, "DlgActor", new[]{ "DlgActor", "AlarmbellActor" });
+				var dogActor = sys.ActorOf (dogActorProps, "WatchdogActor");
 
-			var dlgActorProps = Props.Create<DlgActor>(dlg, dogActor, dogActor)
-									 .WithDispatcher("akka.actor.synchronized-dispatcher");
-			var dlgActor = sys.ActorOf(dlgActorProps, "DlgActor");
-
-
-			clock.OnCurrentTime += t => {
-				var e = new CurrentTimeEvent{CurrentTime=t};
-				dlgActor.Tell(e);
-				dogActor.Tell(e);
-			};
+				var dlgActorProps = Props.Create<DlgActor> (dlg, dogActor, dogActor)
+									 .WithDispatcher ("akka.actor.synchronized-dispatcher");
+				var dlgActor = sys.ActorOf (dlgActorProps, "DlgActor");
 
 
-            Application.Run(dlg);
+				clock.OnCurrentTime += t => {
+					var e = new CurrentTimeEvent{ CurrentTime = t };
+					dlgActor.Tell (e);
+					dogActor.Tell (e);
+				};
+
+
+				Application.Run (dlg);
+			}
         }
     }
 }
