@@ -19,7 +19,6 @@ namespace alarmclock.head
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
 			using (IAlarmbell bell = new AlarmbellOSX ())
 			using (var clock = new Clock ()) {
 				var dog = new Watchdog ();
@@ -31,11 +30,11 @@ namespace alarmclock.head
 				var bellActorProps = Props.Create<AlarmbellActor> (bell);
 				sys.ActorOf (bellActorProps, "AlarmbellActor");
 
-				var dogActorProps = Props.Create<WatchdogActor> (dog, "DlgActor", new[]{ "DlgActor", "AlarmbellActor" });
+				var dogActorProps = Props.Create<WatchdogActor> (dog, new[]{ "DlgActor", "AlarmbellActor" });
 				var dogActor = sys.ActorOf (dogActorProps, "WatchdogActor");
 
-				var dlgActorProps = Props.Create<DlgActor> (dlg, dogActor, dogActor)
-									 .WithDispatcher ("akka.actor.synchronized-dispatcher");
+				var dlgActorProps = Props.Create<DlgActor> (dlg, dogActor)
+									     .WithDispatcher ("akka.actor.synchronized-dispatcher");
 				var dlgActor = sys.ActorOf (dlgActorProps, "DlgActor");
 
 
